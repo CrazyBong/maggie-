@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-cream: #F5F0E0;
+    --bg-white: #FFFFFF;
+    --bg-dark: #1A1A1A;
+    --accent-green: #B8F067;
+    --accent-pink: #FF6EC7;
+    --accent-yellow: #FFE44D;
+    --accent-purple: #C9B8FF;
+    --accent-blue: #A8D8FF;
+    --text-primary: #0D0D0D;
+    --text-muted: #555555;
+    --border: #0D0D0D;
+
+    --shadow-sm: 2px 2px 0px #0D0D0D;
+    --shadow-md: 4px 4px 0px #0D0D0D;
+    --shadow-lg: 6px 6px 0px #0D0D0D;
+    --shadow-xl: 8px 8px 0px #0D0D0D;
+  }
+
+  body {
+    @apply bg-bg-cream text-text-primary font-sans antialiased;
+  }
+
+  /* Lenis Scroll Base */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
+  .lenis.lenis-smooth iframe {
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  /* Core neobrutalism card style */
+  .neo-card {
+    border: 2px solid var(--border);
+    box-shadow: var(--shadow-md);
+    border-radius: 4px;
+    background: var(--bg-white);
+  }
+
+  .neo-card-hover:hover {
+    box-shadow: var(--shadow-sm);
+    transform: translate(2px, 2px);
+    transition: all 0.1s ease;
+  }
+}
