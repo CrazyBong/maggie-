@@ -11,8 +11,8 @@ RUN addgroup --system appgroup && adduser --system appuser --ingroup appgroup
 USER appuser
 WORKDIR /app
 
-ENV NODE_ENV production
-ENV NEXT_TELEMETRY_DISABLED 1
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
 
 COPY --from=builder --chown=appuser:appgroup /app/public ./public
 COPY --from=builder --chown=appuser:appgroup /app/.next/standalone ./
